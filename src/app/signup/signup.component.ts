@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthenticationService} from "../authentication.service";
+import {ActivatedRoute, Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-signup',
@@ -15,7 +17,9 @@ export class SignupComponent implements OnInit {
   username: String;
   password: String;
 
-  constructor(private AuthService:AuthenticationService) { }
+  constructor(private AuthService:AuthenticationService,
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
@@ -32,6 +36,13 @@ export class SignupComponent implements OnInit {
     console.log(user);
     this.AuthService.signUpUser(user).subscribe(res=>{
         console.log(res);
+        if(res.state){
+            this.router.navigate(['/login'],{relativeTo: this.route});
+        }else
+        {
+            // If Sucessfull
+            this.router.navigate(['/home'],{relativeTo: this.route});
+        }
     });
   }
 }
