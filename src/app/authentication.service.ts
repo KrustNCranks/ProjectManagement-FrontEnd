@@ -31,5 +31,12 @@ export class AuthenticationService {
         this.authToken = token;
     }
 
+    getProjects(){
+        let headers = new Headers();
+        // headers.append('Authorization',);
+        headers.append('Content-Type','application/json');
+        return this.http.post("http://localhost:3000/projects",{headers:headers}).map(res=>res.json());
+    }
+
 
 }
