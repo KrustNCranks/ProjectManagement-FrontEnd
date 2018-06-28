@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { Router } from '@angular/router';
 
+
 @Injectable()
 export class AuthenticationService {
 
@@ -58,11 +59,12 @@ export class AuthenticationService {
       this.authToken = token;
     }
 
-    logout(){
+    public logout(){
       this.authToken = null;
       localStorage.clear();
     }
 
+    
 
 
 }

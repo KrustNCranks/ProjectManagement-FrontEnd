@@ -36,4 +36,14 @@ export class LoginComponent implements OnInit {
       })
   }
 
+    getUserDetailss(){
+      const user = {
+          username: this.username,
+          password: this.password
+      }
+      this.AuthService.getUserDetails(user).subscribe(res=>{
+          console.log(res);
+      })
+  }
+
 }
