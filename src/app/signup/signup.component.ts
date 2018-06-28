@@ -41,7 +41,7 @@ export class SignupComponent implements OnInit {
         }else
         {
             // If Sucessfull
-            this.router.navigate(['/home'],{relativeTo: this.route});
+            this.router.navigate(['/signupsuccess'],{relativeTo: this.route});
         }
     });
   }
