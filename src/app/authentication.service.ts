@@ -32,11 +32,37 @@ export class AuthenticationService {
     }
 
     getProjects(){
+        this.fetchToken();
         let headers = new Headers();
-        // headers.append('Authorization',);
+        headers.append('Authorization', this.authToken);
         headers.append('Content-Type','application/json');
         return this.http.post("http://localhost:3000/projects",{headers:headers}).map(res=>res.json());
     }
+
+    getResources(){
+        let headers = new Headers();
+        // headers.append('Authorization',);
+        headers.append('Content-Type','application/json');
+        return this.http.post("http://localhost:3000/resources",{headers:headers}).map(res=>res.json());
+    }
+
+    getTasks(){
+        let headers = new Headers();
+        // headers.append('Authorization',);
+        headers.append('Content-Type','application/json');
+        return this.http.post("http://localhost:3000/tasks",{headers:headers}).map(res=>res.json());
+    }
+
+    fetchToken(){
+      const token = localStorage.getItem("tokenId");
+      this.authToken = token;
+    }
+
+    logout(){
+      this.authToken = null;
+      localStorage.clear();
+    }
+
 
 
 }

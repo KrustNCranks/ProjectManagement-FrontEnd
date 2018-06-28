@@ -12,6 +12,9 @@ import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from "./authentication.service";
 import { AuthGuardService } from "./auth-guard.service";
 import { SignupSucessfulComponent } from './signup-sucessful/signup-sucessful.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ResourcesComponent } from './resources/resources.component';
+import { TasksComponent } from './tasks/tasks.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -30,7 +33,10 @@ const routes: Routes = [
     NavbarComponent,
     SignupComponent,
     LoginComponent,
-    SignupSucessfulComponent
+    SignupSucessfulComponent,
+    ProjectsComponent,
+    ResourcesComponent,
+    TasksComponent
   ],
   imports: [
     BrowserModule,
