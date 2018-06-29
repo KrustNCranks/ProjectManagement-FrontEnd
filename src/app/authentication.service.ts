@@ -12,6 +12,8 @@ export class AuthenticationService {
     user:any;
     authToken: any;
     project:any;
+    resource:any;
+    task:any;
   constructor(private http: Http) { }
 
     // Take user object and signs up with the backend
@@ -64,6 +66,22 @@ export class AuthenticationService {
         headers.append('Content-Type','application/json');
         headers.append('Authorization', 'Bearer '+this.authToken);
         return this.http.post("http://localhost:3000/projects",project,{headers:headers}).map(res=>res.json());
+    }
+
+    addResources(resource){
+        this.fetchToken();
+        let headers = new Headers();
+        headers.append('Content-Type','application/json');
+        headers.append('Authorization', 'Bearer '+this.authToken);
+        return this.http.post("http://localhost:3000/resources",resource,{headers:headers}).map(res=>res.json());
+    }
+
+    addTask(task){
+        this.fetchToken();
+        let headers = new Headers();
+        headers.append('Content-Type','application/json');
+        headers.append('Authorization', 'Bearer '+this.authToken);
+        return this.http.post("http://localhost:3000/tasks",task,{headers:headers}).map(res=>res.json());
     }
 
     fetchToken(){

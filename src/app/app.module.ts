@@ -36,7 +36,9 @@ const routes: Routes = [
     { path: 'allprojects', component: AllprojectsComponent},
     { path: 'allresources', component: AllresourcesComponent},
     { path: 'alltasks', component: AlltasksComponent},
-    { path: 'addproject', component: AddprojectComponent}
+    { path: 'addproject', component: AddprojectComponent},
+    { path: 'addresource', component: AdderesourceComponent},
+    { path: 'addtask', component: AddtaskComponent}
 ];
 
 
