@@ -16,6 +16,12 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { AllprojectsComponent } from './allprojects/allprojects.component';
+import { AllresourcesComponent } from './allresources/allresources.component';
+import { AlltasksComponent } from './alltasks/alltasks.component';
+import { AddprojectComponent } from './addproject/addproject.component';
+import { AdderesourceComponent } from './adderesource/adderesource.component';
+import { AddtaskComponent } from './addtask/addtask.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -26,7 +32,11 @@ const routes: Routes = [
     { path: 'welcome', component: WelcomeComponent },
     { path: 'projects', component: ProjectsComponent },
     { path: 'resources', component: ResourcesComponent },
-    { path: 'tasks', component: TasksComponent }
+    { path: 'tasks', component: TasksComponent },
+    { path: 'allprojects', component: AllprojectsComponent},
+    { path: 'allresources', component: AllresourcesComponent},
+    { path: 'alltasks', component: AlltasksComponent},
+    { path: 'addproject', component: AddprojectComponent}
 ];
 
 
@@ -42,7 +52,13 @@ const routes: Routes = [
     ProjectsComponent,
     ResourcesComponent,
     TasksComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    AllprojectsComponent,
+    AllresourcesComponent,
+    AlltasksComponent,
+    AddprojectComponent,
+    AdderesourceComponent,
+    AddtaskComponent
   ],
   imports: [
     BrowserModule,

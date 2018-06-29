@@ -13,10 +13,6 @@ export class TasksComponent implements OnInit {
   constructor(private AuthService:AuthenticationService) { }
 
   ngOnInit() {
-          this.AuthService.getTasks().subscribe(res=>{
-              this.AllTasks = res;
-              console.log(this.AllTasks);
-          })
       }
 
 }

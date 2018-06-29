@@ -1,0 +1,49 @@
+<div class="container" (submit)="addProject()">
+
+  <form>
+    <fieldset>
+      <legend> </legend>
+      <legend> </legend>
+      <legend>Add Project</legend>
+      <h6>Please Enter Your Project Details</h6>
+      <div class="form-group">
+        <label for="name">Project Name</label>
+        <input type="text" class="form-control" name="firstname" placeholder="Enter a Project Name" [(ngModel)]="name">
+      </div>
+      <div class="form-group">
+        <label for="projectDescription">Description</label>
+        <input type="text" class="form-control" name="projectDescription" placeholder="Describe Your Project" [(ngModel)]="projectDescription">
+      </div>
+      <div class="form-group">
+        <label for="startDate">Project Start Date</label>
+        <input type="date" class="form-control" name="startDate" placeholder="When Will The Project Start?" [(ngModel)]="startDate">
+      </div>
+      <div class="form-group">
+        <label for="deadline">Project Deadline</label>
+        <input type="date" class="form-control" name="deadline" placeholder="When is the Deadline" [(ngModel)]="deadline">
+      </div>
+      <div class="form-group">
+        <label for="lastname">Project Owner</label>
+        <input type="text" class="form-control" name="projectOwner" placeholder="Who does the project belong to?" [(ngModel)]="projectOwner">
+      </div>
+      <div class="form-group">
+        <label for="collaboraters">Collaborators</label>
+        <input type="text" class="form-control" name="collaboraters" placeholder="Who is gonna Collaborate with you?" [(ngModel)]="collaboraters">
+      </div>
+      <div class="form-group">
+        <label for="collaboraters">Project Resources</label>
+        <input type="text" class="form-control" name="resources" placeholder="What Resources are your gonna use?" [(ngModel)]="resources">
+      </div>
+
+
+      <fieldset class="form-group">
+
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="reset" class="btn btn-secondary">Clear</button>
+      <button type="button" routerLink="/projects" class="btn btn-primary">Go Back</button>
+    </fieldset>
+  </form>
+
+
+</div>

@@ -12,9 +12,6 @@ export class ResourcesComponent implements OnInit {
     constructor(private AuthService:AuthenticationService) { }
 
     ngOnInit() {
-        this.AuthService.getResources().subscribe(res=>{
-            this.AllResources = res;
-            console.log(this.AllResources);
-        })
+
     }
 }
