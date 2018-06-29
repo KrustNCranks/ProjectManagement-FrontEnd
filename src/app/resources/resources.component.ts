@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthenticationService} from "../authentication.service";
 
 @Component({
   selector: 'app-resources',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResourcesComponent implements OnInit {
 
-  constructor() { }
+    AllResources: any =[];
+    constructor(private AuthService:AuthenticationService) { }
 
-  ngOnInit() {
-  }
-
+    ngOnInit() {
+        this.AuthService.getResources().subscribe(res=>{
+            this.AllResources = res;
+            console.log(this.AllResources);
+        })
+    }
 }

@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import { Router } from '@angular/router';
 
 
+
 @Injectable()
 export class AuthenticationService {
 
@@ -35,23 +36,25 @@ export class AuthenticationService {
     getProjects(){
         this.fetchToken();
         let headers = new Headers();
-        headers.append('Authorization', `Bearer ${this.fetchToken()}`);
         headers.append('Content-Type','application/json');
+        headers.append('Authorization', 'Bearer '+this.authToken);
         return this.http.get("http://localhost:3000/projects",{headers:headers}).map(res=>res.json());
     }
 
     getResources(){
+        this.fetchToken();
         let headers = new Headers();
-        // headers.append('Authorization',);
         headers.append('Content-Type','application/json');
-        return this.http.post("http://localhost:3000/resources",{headers:headers}).map(res=>res.json());
+        headers.append('Authorization', 'Bearer '+this.authToken);
+        return this.http.get("http://localhost:3000/resources",{headers:headers}).map(res=>res.json());
     }
 
     getTasks(){
+        this.fetchToken();
         let headers = new Headers();
-        // headers.append('Authorization',);
         headers.append('Content-Type','application/json');
-        return this.http.post("http://localhost:3000/tasks",{headers:headers}).map(res=>res.json());
+        headers.append('Authorization', 'Bearer '+this.authToken);
+        return this.http.get("http://localhost:3000/tasks",{headers:headers}).map(res=>res.json());
     }
 
     fetchToken(){
@@ -63,6 +66,13 @@ export class AuthenticationService {
       this.authToken = null;
       localStorage.clear();
   }
+
+
+
+
+
+
+
 
 
 

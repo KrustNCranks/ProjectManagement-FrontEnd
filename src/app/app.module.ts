@@ -24,7 +24,9 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'signupsuccess', component: SignupComponent },
     { path: 'welcome', component: WelcomeComponent },
-    { path: 'projects', component: ProjectsComponent }
+    { path: 'projects', component: ProjectsComponent },
+    { path: 'resources', component: ResourcesComponent },
+    { path: 'tasks', component: TasksComponent }
 ];
 
 

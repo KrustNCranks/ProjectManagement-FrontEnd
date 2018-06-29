@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthenticationService} from "../authentication.service";
+
 
 @Component({
   selector: 'app-tasks',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TasksComponent implements OnInit {
 
-  constructor() { }
+    AllTasks: any =[];
+  constructor(private AuthService:AuthenticationService) { }
 
   ngOnInit() {
-  }
+          this.AuthService.getTasks().subscribe(res=>{
+              this.AllTasks = res;
+              console.log(this.AllTasks);
+          })
+      }
 
 }

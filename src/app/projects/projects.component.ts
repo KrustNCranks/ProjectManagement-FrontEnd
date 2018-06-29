@@ -7,10 +7,14 @@ import {AuthenticationService} from "../authentication.service";
 })
 export class ProjectsComponent implements OnInit {
 
+    AllProjects: any =[];
   constructor(private AuthService:AuthenticationService) { }
 
   ngOnInit() {
-      this.AuthService.getProjects();
+      this.AuthService.getProjects().subscribe(res=>{
+          this.AllProjects = res;
+          console.log(this.AllProjects);
+      })
   }
 
 
