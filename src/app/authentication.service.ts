@@ -35,9 +35,9 @@ export class AuthenticationService {
     getProjects(){
         this.fetchToken();
         let headers = new Headers();
-        headers.append('Authorization', this.authToken);
+        headers.append('Authorization', `Bearer ${this.fetchToken()}`);
         headers.append('Content-Type','application/json');
-        return this.http.post("http://localhost:3000/projects",{headers:headers}).map(res=>res.json());
+        return this.http.get("http://localhost:3000/projects",{headers:headers}).map(res=>res.json());
     }
 
     getResources(){
@@ -62,9 +62,9 @@ export class AuthenticationService {
     public logout(){
       this.authToken = null;
       localStorage.clear();
-    }
+  }
 
-    
+
 
 
 }

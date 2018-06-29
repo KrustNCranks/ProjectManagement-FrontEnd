@@ -31,18 +31,8 @@ export class LoginComponent implements OnInit {
           {
               // If Sucessfull
               this.AuthService.storeData(res.token);
-              this.router.navigate(['/home'],{relativeTo: this.route});
+              this.router.navigate(['/welcome'],{relativeTo: this.route});
           }
-      })
-  }
-
-    getUserDetailss(){
-      const user = {
-          username: this.username,
-          password: this.password
-      }
-      this.AuthService.getUserDetails(user).subscribe(res=>{
-          console.log(res);
       })
   }
 

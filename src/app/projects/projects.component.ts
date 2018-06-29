@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {AuthenticationService} from "../authentication.service";
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private AuthService:AuthenticationService) { }
 
   ngOnInit() {
+      this.AuthService.getProjects();
   }
+
 
 }

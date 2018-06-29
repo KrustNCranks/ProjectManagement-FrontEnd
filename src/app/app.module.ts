@@ -15,13 +15,16 @@ import { SignupSucessfulComponent } from './signup-sucessful/signup-sucessful.co
 import { ProjectsComponent } from './projects/projects.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { TasksComponent } from './tasks/tasks.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'home', component: HomeComponent },
-    { path: 'signupsuccess', component: SignupComponent }
+    { path: 'signupsuccess', component: SignupComponent },
+    { path: 'welcome', component: WelcomeComponent },
+    { path: 'projects', component: ProjectsComponent }
 ];
 
 
@@ -36,7 +39,8 @@ const routes: Routes = [
     SignupSucessfulComponent,
     ProjectsComponent,
     ResourcesComponent,
-    TasksComponent
+    TasksComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
